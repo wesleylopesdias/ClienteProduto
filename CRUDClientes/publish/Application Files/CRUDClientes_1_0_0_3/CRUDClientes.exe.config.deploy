@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6" />
+    </startup>
+    <connectionStrings>
+      <add name="conn" providerName="System.Data.SqlClient" connectionString="Server=tcp:masterdan.database.windows.net,1433;Initial Catalog=PROJETOTESTE;Persist Security Info=False;User ID=DANILLO;Password=Danidan07;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" />
+    </connectionStrings>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="AtendeClienteServiceSoapBinding">
+                    <security mode="Transport" />
+                </binding>
+                <binding name="AtendeClienteServiceSoapBinding1" />
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente"
+                binding="basicHttpBinding" bindingConfiguration="AtendeClienteServiceSoapBinding"
+                contract="WSCorreios.AtendeCliente" name="AtendeClientePort" />
+        </client>
+    </system.serviceModel>
+</configuration>
